@@ -1,0 +1,2 @@
+class CursoActiverecordController < ApplicationController
+end

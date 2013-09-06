@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807035126) do
+ActiveRecord::Schema.define(version: 20130906021940) do
 
   create_table "direccions", force: true do |t|
     t.string   "calle"
-    t.string   "zona"
-    t.string   "casa"
-    t.string   "ciudad"
+    t.text     "zona"
+    t.string   "pais"
+    t.text     "ciudad"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facturas", force: true do |t|
+    t.string   "referencia"
+    t.text     "monto"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "telefonos", force: true do |t|
+    t.string   "tipo"
+    t.text     "telefono"
+    t.integer  "direccion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,6 +42,8 @@ ActiveRecord::Schema.define(version: 20130807035126) do
   create_table "usuarios", force: true do |t|
     t.string   "nombre"
     t.string   "apellido"
+    t.date     "nacimiento"
+    t.string   "sexo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

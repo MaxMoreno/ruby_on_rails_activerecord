@@ -2,12 +2,12 @@
 
 one:
   calle: MyString
-  zona: MyString
-  casa: MyString
-  ciudad: MyString
+  zona: MyText
+  pais: MyString
+  ciudad: MyText
 
 two:
   calle: MyString
-  zona: MyString
-  casa: MyString
-  ciudad: MyString
+  zona: MyText
+  pais: MyString
+  ciudad: MyText

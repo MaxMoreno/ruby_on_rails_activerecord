@@ -1,0 +1,31 @@
+<h1>Utilizando Segmentos SQL</h1>
+<p>Todos los usuarios que tienen una al menos una direccion</p>
+<p><b>RAILS:</b>      Usuario.joins('INNER JOIN direccions ON direccions.usuario_id = usuarios.id')</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios INNER JOIN direccions ON direccions.usuario_id = usuarios.id</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<%= link_to 'Atrás', root_path %>

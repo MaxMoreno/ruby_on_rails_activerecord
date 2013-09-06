@@ -1,16 +1,14 @@
 RubyOnRailsActiverecord::Application.routes.draw do
-  resources :usuarios
-
-  resources :direccions
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'usuarios#index'
+  root 'curso_activerecord#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'joinSQL' => 'curso_activerecord#joins_sql'
+  get 'join' => 'curso_activerecord#joins'
+  get 'scope' => 'curso_activerecord#scope'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

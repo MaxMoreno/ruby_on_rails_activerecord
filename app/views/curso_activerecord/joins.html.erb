@@ -1,0 +1,128 @@
+<h1>Ejemplo1: joins básico</h1>
+<p>Todos los usuarios que tienen una al menos una direccion</p>
+<p><b>RAILS:</b>      Usuario.joins(:direccions)</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios INNER JOIN direccions ON direccions.usuario_id = usuarios.id</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo1.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+
+<h1>Ejemplo1: joins compuesto</h1>
+<p>todos los usuarios con al menos una dirección y una factura</p>
+<p><b>RAILS:</b>      Usuario.joins(:direccions, :facturas)</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios
+  INNER JOIN direccions ON usuarios.usuario_id= direccions.id
+  INNER JOIN facturas ON facturas.usuario_id = usuarios.id</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo2.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>  
+
+<h1>Ejemplo3: joins asociaciones anidadas</h1>
+<p>todos los usuarios con al menos una dirección y una factura</p>
+<p><b>RAILS:</b>      Usuario.joins( direccions: :telefonos)</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios
+  INNER JOIN direccions ON usuarios.usuario_id= direccions.id
+  INNER JOIN telefonos ON telefonos.direccion_id = direccions.id</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo3.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<h1>Ejemplo4: joins Unión entre tablas con condiciones</h1>
+<p>todos los usuarios con al menos una dirección y una factura</p>
+<p><b>RAILS:</b>      Usuario.joins(:direccions).where(direccions: {pais: 'Venezuela'})</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios 
+  INNER JOIN direccions ON direccions.usuario_id = usuarios.id 
+  WHERE direccions.pais = 'Venezuela'</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo4.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<%= link_to 'Atrás', root_path %>

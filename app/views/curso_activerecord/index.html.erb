@@ -1,0 +1,120 @@
+<h1>Ejemplos del tutorial <a href="http://codehero.co/activerecord-parte-2/">Ruby on Rails desde Cero: ActiveRecord parte 2</a></h1>
+<br>  
+<ul>
+  <li><h3><%= link_to 'Joins con fragmentos de SQL', joinSQL_path %></h3></li>
+  <li><h3><%= link_to 'Joins con herramientas Rails', join_path %></h3></li>
+  <li><h3><%= link_to 'Scope', scope_path %></h3></li>
+</ul>
+<br>  
+
+
+<h2>Datos de las tablas que estaremos utilizando</h2>
+<h3>Usuarios</h3>
+
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<h3>Direcciones</h3>
+
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>calle</th>
+      <th>zona</th>
+      <th>país</th>
+      <th>ciudad</th>
+      <th>usuario</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @direccions.each do |direccion| %>
+      <tr>
+        <td><%= direccion.id %></td>
+        <td><%= direccion.calle %></td>
+        <td><%= direccion.zona %></td>
+        <td><%= direccion.pais %></td>
+        <td><%= direccion.ciudad %></td>
+        <td><%= direccion.usuario.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<h3>Teléfonos</h3>
+
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>teléfono</th>
+      <th>tipo</th>
+      <th>dirección</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @telefonos.each do |telefono| %>
+      <tr>
+        <td><%= telefono.id %></td>
+        <td><%= telefono.telefono %></td>
+        <td><%= telefono.tipo %></td>
+        <td><%= telefono.direccion.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+<h3>Facturas</h3>
+
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>referencia</th>
+      <th>monto</th>
+      <th>usuario</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facturas.each do |factura| %>
+      <tr>
+        <td><%= factura.id %></td>
+        <td><%= factura.referencia %></td>
+        <td><%= factura.monto %></td>
+        <td><%= factura.usuario.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   

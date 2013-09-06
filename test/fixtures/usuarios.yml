@@ -3,7 +3,11 @@
 one:
   nombre: MyString
   apellido: MyString
+  nacimiento: 2013-09-05
+  sexo: MyString
 
 two:
   nombre: MyString
   apellido: MyString
+  nacimiento: 2013-09-05
+  sexo: MyString

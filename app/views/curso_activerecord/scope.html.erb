@@ -1,0 +1,94 @@
+<h1>Ejemplo1: scope básico</h1>
+<p>Todos los usuarios que tienen una al menos una direccion</p>
+<p><b>RAILS:</b>      Usuario.masculino</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios WHERE sexo = 'm'</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo1.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+
+<h1>Ejemplo2: scope con argumentos</h1>
+<p>todos los usuarios con al menos una dirección y una factura</p>
+<p><b>RAILS:</b>      Usuario.mayor_que(Time.zone.parse("1988-05-09"))</p>
+<p><b>SQL:</b>        SELECT usuarios.* FROM usuarios WHERE nacimiento < "1988-05-09"</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo2.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>  
+
+<h1>Ejemplo3: scope compuestos</h1>
+<p>todos los usuarios con al menos una dirección y una factura</p>
+<p><b>RAILS:</b>     Usuario.masculino.mayor_que(Time.zone.parse("1988-05-09"))</p>
+<p><b>SQL:</b>       SELECT usuarios.* FROM usuarios WHERE nacimiento < "1988-05-09" and sexo ='m'</p>
+<table class ="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>apellido</th>
+      <th>nacimiento</th>
+      <th>sexo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejemplo3.each do |usuario| %>
+      <tr>
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.nacimiento %></td>
+        <td><%= usuario.sexo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>   
+
+
+
+<%= link_to 'Atrás', root_path %>

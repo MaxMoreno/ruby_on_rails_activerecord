@@ -5,10 +5,22 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30">
 </head>
 <body>
+	        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+           <ul class="nav navbar-nav">
+            <li class="active"><a href="<%= root_path %>">Home</a></li>
+            <li><a href="<%= joinSQL_path %>">Joins con fragmentos de SQL</a></li>
+            <li><a href="<%= join_path %>">Joins con herramientas Rails</a></li>
+            <li><a href="<%= scope_path %>">Scope</a></li>
+            <li><a href="http://codehero.co/">CODEHERO</a></li>
+          </ul>
+
+</nav>
+<div class="container">
 
 <%= yield %>
-
+</div>
 </body>
 </html>

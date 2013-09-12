@@ -41,3 +41,4 @@ Funda en mayo de 2013 como un proyecto de cinco jóvenes venezolanos, residentes
 [2]:http://codehero.co/ruby-on-rails-desde-cero-estructura-del-proyecto/
 [3]:http://codehero.co
 [4]:http://codehero.co/activerecord-parte-2/
+

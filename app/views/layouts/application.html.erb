@@ -2,25 +2,57 @@
 <html>
 <head>
   <title>RubyOnRailsActiverecord</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" =>
+  true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" =>
+  true %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30">
-</head>
+  <link rel="shortcut icon" href="http://www.gravatar.com/avatar/6352c71a03d5b247726deda291af1539?s=30"></head>
 <body>
-	        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-           <ul class="nav navbar-nav">
-            <li class="active"><a href="<%= root_path %>">Home</a></li>
-            <li><a href="<%= joinSQL_path %>">Joins con fragmentos de SQL</a></li>
-            <li><a href="<%= join_path %>">Joins con herramientas Rails</a></li>
-            <li><a href="<%= scope_path %>">Scope</a></li>
-            <li><a href="http://codehero.co/">CODEHERO</a></li>
-          </ul>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="<%= root_path %>">Home</a>
+      </li>
+  <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          ActiveRecord parte 2 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="<%= join_path %>">inicio</a>
+          </li>
+          <li>
+            <a href="<%= join_joinSQL_path %>">Joins con fragmentos de SQL</a>
+          </li>
+          <li>
+            <a href="<%= join_join_path %>">Joins con herramientas Rails</a>
+          </li>
+          <li>
+            <a href="<%= join_scope_path %>">Scope</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="<%= validation_path %>">ActiveRecord Validaciones</a>
+      </li>
+      <li>
+        <a href="http://codehero.co/">CODEHERO</a>
+      </li>
 
-</nav>
-<div class="container">
+    </ul>
 
-<%= yield %>
+  </nav>
+  <div class="container main">
+
+    <%= yield %></div>
+
+    <footer>
+      <div class="container">
+      <h4><a href="http://codehero.co/">CodeHero.co</a></h4>
+
+<p>Una iniciativa que nace de la falta de recursos educativos sobre tecnologías de información en español.</p>
+
+</p>Funda en mayo de 2013 como un proyecto de cinco jóvenes venezolanos, residentes de la ciudad de Caracas, con el sueño de llevar los conocimientos adquiridos durante sus estudios y experiencias de trabajo, hasta las personas que no tienen acceso a ella, principalmente porque no entienden la lengua más hablada del internet, inglés.</p>
 </div>
-</body>
-</html>
+    </footer>

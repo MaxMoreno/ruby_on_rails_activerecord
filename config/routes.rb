@@ -3,12 +3,16 @@ RubyOnRailsActiverecord::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'curso_activerecord#index'
+  root 'home#index'
 
   # Example of regular route:
-  get 'joinSQL' => 'curso_activerecord#joins_sql'
-  get 'join' => 'curso_activerecord#joins'
-  get 'scope' => 'curso_activerecord#scope'
+  get 'join' => 'curso_activerecord#index'
+  get 'join/joinSQL' => 'curso_activerecord#joins_sql'
+  get 'join/join' => 'curso_activerecord#joins'
+  get 'join/scope' => 'curso_activerecord#scope'
+
+  get 'validation' => 'curso_validaciones#index'
+  post 'validation/create' => 'curso_validaciones#create'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

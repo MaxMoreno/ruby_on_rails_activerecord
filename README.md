@@ -4,7 +4,7 @@ Espacio Git determinado a los siguientes tutoriales:
 
 * [Ruby on Rails desde Cero: ActiveRecord parte 2][4]
 * [Ruby on Rails desde cero: ActiveRecord Validaciones][5]
-* [Ruby on Rails desde cero: ActiveRecord Validaciones][6]
+* [Ruby on Rails desde cero: ActiveModel][6]
 
 Suponiendo que tenemos instalado y configurado Rails en nuestros servidores (si esto no es así podemos revisar el primer capítulo de la serie: [Ruby on Rails desde Cero: Instalación & Configuración][1]) debemos seguir estos sencillos pasos para probar el proyecto:
 

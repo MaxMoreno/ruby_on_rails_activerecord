@@ -1,0 +1,53 @@
+
+  <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: 'alert alert-success'%>
+
+    <% end -%>
+
+<div class ="col-sm-6">
+<%= form_for @mensaje do |f| %>
+
+
+  <% if @mensaje.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mensaje.errors.count, "error") %> antes de guardar:</h2>
+
+      <ul>
+      <% @mensaje.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p> 
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :contenido, "Mensaje" %><br />
+    <%= f.text_area :contenido %>
+  </p>
+  <p><%= f.submit "Enviar" %></p>
+<% end %>
+
+</div>
+<div class ="col-sm-6">
+<div class="list-group">
+  <a href="<%= mensaje_json_path %>" class="list-group-item active">
+    <h4 class="list-group-item-heading">Serialización Formato JSON</h4>
+    <p class="list-group-item-text">Serializa un Objeto mensaje y lo imprime en formato JSON</p>
+  </a>
+    <a href="<%= mensaje_xml_path %>" class="list-group-item">
+    <h4 class="list-group-item-heading">Serialización Formato XML</h4>
+    <p class="list-group-item-text">Serializa un Objeto mensaje y lo imprime en formato XML</p>
+  </a>
+</div>
+</div>
+
+

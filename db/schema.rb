@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920014404) do
+ActiveRecord::Schema.define(version: 20131017031243) do
 
   create_table "direccions", force: true do |t|
     t.string   "calle"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20130920014404) do
     t.string   "referencia"
     t.text     "monto"
     t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombre_modelos", force: true do |t|
+    t.string   "atributo1"
+    t.string   "atributo2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

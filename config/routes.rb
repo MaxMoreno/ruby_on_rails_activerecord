@@ -14,6 +14,14 @@ RubyOnRailsActiverecord::Application.routes.draw do
   get 'join/joinSQL' => 'curso_activerecord#joins_sql'
   get 'join/join' => 'curso_activerecord#joins'
   get 'join/scope' => 'curso_activerecord#scope'
+  
+  get 'serializar' => 'serializar_objeto#index'
+  get 'serializar/meta' => 'serializar_objeto#serializado_meta'
+  get 'serializar/basic' => 'serializar_objeto#serializado'
+  get 'serializar/custom' => 'serializar_objeto#serializado_custom'
+
+
+
 
   get 'validation' => 'curso_validaciones#index'
   post 'validation/create' => 'curso_validaciones#create'

@@ -23,7 +23,6 @@ class CursoActiverecordController < ApplicationController
 	@ejemplo1    = Usuario.masculino
 	@ejemplo2    = Usuario.mayor_que(Time.zone.parse("1988-05-09"))
 	@ejemplo3    = Usuario.masculino.mayor_que(Time.zone.parse("1988-05-09"))
-
   end
 
 end

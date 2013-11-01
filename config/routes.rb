@@ -20,7 +20,8 @@ RubyOnRailsActiverecord::Application.routes.draw do
   get 'serializar/basic' => 'serializar_objeto#serializado'
   get 'serializar/custom' => 'serializar_objeto#serializado_custom'
 
-
+  get 'email' => 'enviar_email#index'
+  get 'email/send' => 'enviar_email#enviar'
 
 
   get 'validation' => 'curso_validaciones#index'
